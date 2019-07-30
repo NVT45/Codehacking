@@ -21,7 +21,7 @@
       <tr>
           <td>{{$post -> id}}</td>
           <td>{{$post -> user->name}}</td>
-          <td>{{$post -> category_id}}</td>
+          <td>{{$post->category ? $post->category->name :"Uncategoried"}}</td>
           <td><img height="50" src="{{URL::to('/')}}{{$post->photo ? $post->photo->file :'User has no role'}}"></td>
           <td>{{$post -> title}}</td>
           <td>{{$post -> body}}</td>
