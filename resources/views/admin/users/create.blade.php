@@ -2,7 +2,7 @@
 @section('content')
 @section('pagehead','Create User')
 {!! Form::open(['method'=>'POST','action'=>'AdminUsersController@store','files'=>true]) !!}
-@csrf
+{{ csrf_field() }}
 <div class="form-group">
     {!! Form::label('name','Name:') !!}
     {!! Form::text('name',null,['class'=>'form-control']) !!}
@@ -21,7 +21,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('photo_id','Choose Avatar:') !!}
-    {!! Form::file('photo_id',['class'=>'form-control']) !!}
+    {!! Form::file('photo_id',null,['class'=>'form-control']) !!}
 </div>
 <div class="form-group">
     {!! Form::label('password','Password:') !!}
@@ -30,5 +30,6 @@
 <div class="form-group">
     {!! Form::submit('Create Users',['class'=>'btn btn-primary']) !!}
 </div>
+{!! Form::close() !!}
 @include('includes.form-errors')
 @stop
